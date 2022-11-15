@@ -7,10 +7,10 @@
 #
 name: OpenWrt-CI
 on:
-    push:
-    branches: 
+     push:
+      branches: 
      # master为你需要编译的当前固件的分支
-     - master
+      - master
  #schedule:
  #  - cron: 0 20 * * *
  # release:
@@ -51,9 +51,9 @@ jobs:
 
       - name: Update feeds
         run: |
-        #sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
-          ./scripts/feeds update -a
-          ./scripts/feeds install -a
+                sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
+                ./scripts/feeds update -a
+                ./scripts/feeds install -a
 
       - name: Generate configuration file
         run: |
@@ -135,8 +135,8 @@ jobs:
           # 
           # ========================固件定制部分结束========================
           # 
-        sed -i 's/^[ \t]*//g' ./.config
-        make defconfig
+          sed -i 's/^[ \t]*//g' ./.config
+          make defconfig
 
       - name: Make download
         run: |
