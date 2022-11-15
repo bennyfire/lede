@@ -6,12 +6,11 @@
 # Copyright (C) 2020 KFERMercer
 #
 name: OpenWrt-CI
-
- on:
-        push:
-        branches: 
-          # master为你需要编译的当前固件的分支
-          - master
+on:
+    push:
+    branches: 
+     # master为你需要编译的当前固件的分支
+     - master
  #schedule:
  #  - cron: 0 20 * * *
  # release:
